@@ -19,7 +19,7 @@
    
 
     <title>MirrorCo. Index</title>
-
+    <base target="_blank">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">MirrorCo.</a>
+                <a class="navbar-brand">MirrorCo.</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -68,10 +68,12 @@
                     <li>
                         <a href="contact.php">Contact</a>
                     </li>
-
+    
                 </ul>
+
             </div>
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>
@@ -87,7 +89,9 @@
         <div class="row">
 
             <div class="col-lg-12">
-               <h1 class="page-header"> Index</h1>
+
+               <h1 class="page-header"> Index</h1> 
+
             </div>
            
         </div>
@@ -96,6 +100,7 @@
         <img src="images/camera.png" height="251" width="333" align="right">
         </div>
     
+
     
     <h3>Project Introduction</h3>
     <br>
@@ -108,7 +113,7 @@
     <br>
     <p>We are all mirrors to each other in this world</p>
     <br>
-    <h1 align="center"><font color = "grey">Stop Cyber Bullying & Start The Warmest Miracles</font></h1>
+    <h1 align="center"><font color = "grey">Stop Cyber Bullying & Save The Warmest Miracles</font></h1>
     <br><br><br><br>
 
         <div class = "image-pos2">
@@ -121,7 +126,19 @@
         <p><b>Default Password:</b> ZHANG <font color = "grey"> - Case Sensitive</font></p>
         <br>
         <p><a href="about.php"><font color = "#bf8040"><b><u>Read more...</u></b></font></a></p>
-        <br><br><br><br>
+
+        <br><br>
+
+        <div class="image-pos2">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <audio controls autoplay>
+            <source src="audio/I_wont_give_up.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <br><br>
+
+
+        <br><br>
    
 
 

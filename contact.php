@@ -10,7 +10,7 @@
     <meta name="description" content="">
    
 
-    <title>MirrorCo. Index</title>
+    <title>MirrorCo. Contact</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -62,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="contact.php">Contact</a>
+                        <a href="#">Contact</a>
                     </li>
 
                 </ul>
@@ -83,7 +83,7 @@
         <div class="row">
 
             <div class="col-lg-12">
-               <h1 class="page-header"> Index</h1>
+               <h1 class="page-header"> Contact</h1>
             </div>
            
     </div>
