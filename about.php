@@ -10,7 +10,7 @@
     <meta name="description" content="">
    
 
-    <title>MirrorCo. Index</title>
+    <title>About MirrorCo</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -45,9 +45,6 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
 
-                    <li>
-                        <a href="about.php">About</a>
-                    </li>
 
                     <li>
                         <a href="index.php">Index</a>
@@ -72,7 +69,7 @@
         <!-- /.container -->
     </nav>
 
-     <!--DB connection-->
+    
 	<?php 
 	 
 	?>
@@ -83,27 +80,40 @@
         <div class="row">
 
             <div class="col-lg-12">
-               <h1 class="page-header"> Index</h1>
+               <h1 class="page-header">About</h1>
             </div>
            
     </div>
 
-    <h3>Testing Instruction</h3>
-    <p>Please register or use the default login username and password to the controllor.</p>
-    <p><b>Default Username:</b> Yiming </p>
-    <p><b>Default Password:</b> ZHANG <font color = "grey"> - Case Sensitive</font></p>
+    <h3>Project Description</h3>
+    <p align="justify">
+    This project is a direct response to a Youtube Viral Video my friend let me watched recently. This video tells a really sad story about an innocent girl, Amanda Todd, who had been a victim of cyber bullying and finally committed suicide under tremendous depression. Sometimes people are doing really cruel things over the internet, giving hateful judgements to each other and bullying arround. Unlike the real world bullying, which will eventually die down as time goes by, the cyber bullyings are somehow existing forever and even rolling bigger so it’s really hard to ignore, making it doesn’t end well as always. I personally have similar real-life experience bullied by a group of people, got isolated and fell into a severe depression for 3 years. So I know how deep it would hurt when you are struggling extremely hard only to get rid of the stupid bullyings. 
+    </p>
 
-
-    <a href="#"></a>
-
-
+    <h3>Significance</h3>
+    <p align="justify">
+    I call this application the MirrorCo, similar pronounciation with the word “Miracle”. There will be a kitten who will talk all the words the user taught them to say. Everytime when the user let it “Talk”, the kitten will pick a random sentence saved within the database that belongs to this user’s DB system and talk it back to you. This would be a way for users to review their own words: If you talk to the kitten with nice and encouraging words, it will return you the same nice and encouraging words, and all of these words will be saved within the database so maybe one day when we are sad, all of a sudden a random but warm message it says will melt your heart; However, if everything the user stored inside the database were some words that would bite, enventually they will be treated the same way how they treated others just like a mirror reflection.
+    </p>
+    <h3>Message To Convey</h3>
+    <p align="justify">
+    The logic is simple but I really hope to convey a positive message to  someone who happens to run my app that: You are much much stronger than you thought you were!  Let’s forget about all the past at this moment, no matter it was bitter or sweet, because all the love and eagerness that dwell in our hearts are what we should fight for.
+    </p>
+    <br> <br>
+    <h2 align="center"><font color ="grey">Together</font></h2>
+    <h2 align="center"><font color ="grey">We are making the warmest </font></h2>
+    <h2 align="center"><font color ="grey">Miracles</font></h2>
+    <br> <br>
+        <div align="center">
+        <img src="images/rb.png" height = "50" width = "37">
+        </div>
+<br> <br><br> <br>
         <hr>
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Yiming ZHANG ITMD 562 FP 15 Fall</p>
+                    <p align="center">Copyright &copy; Yiming ZHANG ITMD 562 FP 15 Fall</p>
                 </div>
             </div>
         </footer>
