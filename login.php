@@ -1,7 +1,11 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+.image-left{
+    margin-left: 1px;
+}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -10,7 +14,7 @@
     <meta name="description" content="">
    
 
-    <title>MirrorCo. Index</title>
+    <title>MirrorCo. Login</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -58,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="#">Sign In</a>
                     </li>
 
                     <li>
@@ -83,17 +87,34 @@
         <div class="row">
 
             <div class="col-lg-12">
-               <h1 class="page-header"> Index</h1>
+               <h1 class="page-header"> Login </h1>
             </div>
            
-    </div>
+        </div>
 
-    <h3>Testing Instruction</h3>
-    <p>Please register or use the default login username and password to the controllor.</p>
-    <p><b>Default Username:</b> Yiming </p>
-    <p><b>Default Password:</b> ZHANG <font color = "grey"> - Case Sensitive</font></p>
+            <div class="image-left">
+                <img src="images/sweet.png" height="198" width = "253" align="left">
+            </div>
+            
 
+        <h4>Pre-registered Authentication</h4>
+        <p>Username: Yiming     Password: ZHANG </p>
+        <br>
+        <p><b>Username: </b> <input type="text" name="username"></p>
+    
+        <p><b>Password: </b> <input type="password" name="password"></p>
 
+        <br>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp;
+        <input type="submit" value = "Login">
+        <br> 
+        
+        <br><br>
+      
     <a href="#"></a>
 
 
@@ -102,7 +123,7 @@
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" align="center">
                     <p>Copyright &copy; Yiming ZHANG ITMD 562 FP 15 Fall</p>
                 </div>
             </div>

@@ -1,7 +1,13 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.image-pos{
+    
+    margin-right: 123px;
+}
 
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -88,10 +94,20 @@
            
     </div>
 
-    <h3>Testing Instruction</h3>
-    <p>Please register or use the default login username and password to the controllor.</p>
-    <p><b>Default Username:</b> Yiming </p>
-    <p><b>Default Password:</b> ZHANG <font color = "grey"> - Case Sensitive</font></p>
+    <div class="image-pos">
+        <img src="images/flower.png" height = "200" width = "357" align="right">
+    </div>
+
+
+    
+    <h3>Yiming Zhang</h3>
+    <p><font color = "grey"> MS.ITM MS.Biology</font></p>
+    <p><b>Email:</b> yzhan214@hawk.iit.edu</p>
+    <b><p> Illinois Institute of Technology</p></b>
+    <p>Chicago, IL, 60616</p>
+
+   
+    <br><br>
 
 
     <a href="#"></a>
@@ -102,7 +118,7 @@
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" align="center">
                     <p>Copyright &copy; Yiming ZHANG ITMD 562 FP 15 Fall</p>
                 </div>
             </div>

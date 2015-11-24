@@ -104,13 +104,13 @@
     
     <h3>Project Introduction</h3>
     <br>
-    <p>This web application is designed to bring <font color = "#bf8040"><b>warmth</b> </font>to people</p>
-    <p>You can teach the kittens to talk, they will remember all the words you said</p>
-    <p>And <b><font color="#bf8040">one day</font></b>, all of a sudden</p>
-    <p>They will talk the right words to you </p>
-    <p>When you just need courage and</p>
-    <p><font color = "#bf8040"><b>Love</b>...</font></p>
-    <br>
+    <p>This web application is designed to bring <font color = "#bf8040"><b>Warmth</b> </font>to people</p>
+    <p>You can teach the kittens to talk, they will remember all the words you said and repeat</p>
+    <p>And each time they will repeat a random record you taught</p>
+    <p>Maybe <b><font color="#bf8040">One day</font></b>, all of a sudden, they talks the right words back to you </p>
+    <p>When you just need courage and <font color = "#bf8040"><b>Love</b>...</font></p>
+    <p>Thus, please "speak" to them nicely and always be gentle</p>
+    <p>As they will do the same to you</p>
     <p>We are all mirrors to each other in this world</p>
     <br>
     <h1 align="center"><font color = "grey">Stop Cyber Bullying & Save The Warmest Miracles</font></h1>
@@ -121,7 +121,7 @@
         </div>
     
         <h3>Testing Instruction</h3>
-        <p>Please register or use the default login username and password to the controllor.</p>
+        <p>Please register or use the default username and password to log in.</p>
         <p><b>Default Username:</b> Yiming </p>
         <p><b>Default Password:</b> ZHANG <font color = "grey"> - Case Sensitive</font></p>
         <br>
