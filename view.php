@@ -10,7 +10,7 @@
     <meta name="description" content="">
    
 
-    <title>MirrorCo. Contact</title>
+    <title>MirrorCo. View</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">MirrorCo.</a>
+                <a class="navbar-brand" >MirrorCo.</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="contact.php">Contact</a>
                     </li>
 
                 </ul>
@@ -83,16 +83,12 @@
         <div class="row">
 
             <div class="col-lg-12">
-               <h1 class="page-header"> Contact</h1>
+               <h1 class="page-header"> View</h1>
             </div>
            
     </div>
 
-    <h3>Testing Instruction</h3>
-    <p>Please register or use the default login username and password to the controllor.</p>
-    <p><b>Default Username:</b> Yiming </p>
-    <p><b>Default Password:</b> ZHANG <font color = "grey"> - Case Sensitive</font></p>
-
+    
 
     <a href="#"></a>
 
@@ -102,7 +98,7 @@
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12" align="center">
                     <p>Copyright &copy; Yiming ZHANG ITMD 562 FP 15 Fall</p>
                 </div>
             </div>

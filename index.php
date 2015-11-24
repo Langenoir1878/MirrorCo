@@ -90,7 +90,7 @@
 
             <div class="col-lg-12">
 
-               <h1 class="page-header"> Index</h1> 
+               <h1 class="page-header">Project Introduction</h1> 
 
             </div>
            
@@ -100,17 +100,15 @@
         <img src="images/camera.png" height="251" width="333" align="right">
         </div>
     
-
-    
-    <h3>Project Introduction</h3>
     <br>
     <p>This web application is designed to bring <font color = "#bf8040"><b>Warmth</b> </font>to people</p>
-    <p>You can teach the kittens to talk, they will remember all the words you said and repeat</p>
-    <p>And each time they will repeat a random record you taught</p>
-    <p>Maybe <b><font color="#bf8040">One day</font></b>, all of a sudden, they talks the right words back to you </p>
+    <p>You can teach the kitten to talk, he will remember all the words you said</p>
+    <p>Each moment the whole world is listening and echoing through this kitten</p>
+    <p>And each time he will repeat a random record taught by users including yourself</p>
+    <p>Maybe <b><font color="#bf8040">One day</font></b>, all of a sudden, he talks the right words back to you </p>
     <p>When you just need courage and <font color = "#bf8040"><b>Love</b>...</font></p>
-    <p>Thus, please "speak" to them nicely and always be gentle</p>
-    <p>As they will do the same to you</p>
+    <p>Thus, please "speak" to this kitten nicely and always be gentle</p>
+    <p>As he will do the same to you</p>
     <p>We are all mirrors to each other in this world</p>
     <br>
     <h1 align="center"><font color = "grey">Stop Cyber Bullying & Save The Warmest Miracles</font></h1>
