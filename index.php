@@ -4,7 +4,7 @@
 <style>
 .image-pos{
     
-    margin-right: 123px;
+    margin-right: 100px;
 }
 .image-pos2{
     margin-left: 10px;
@@ -134,7 +134,8 @@
             </audio>
         </div>
         <br><br>
-
+        
+        <br>
 
         <br><br>
    
@@ -154,8 +155,28 @@
 </body>
  <!-- Footer -->
         <footer>
+<p><font color="grey">Enternal links below provide quick functionality check for testing or grading.</font></p>
             <div class="row">
                 <div class="col-lg-12" align="center">
+        <p>
+                <table style="width:100%">
+                  <tr>
+                    <td><a href="controller.php">Controller</a></td>
+                    <td><a href="profile.php">Profile</a></td>
+                    <td><a href="update.php">Update</a></td>
+                    <td><a href="pwupdate.php">Change Password</a></td>
+                  </tr>
+
+                  <tr>
+                    <td><a href="teachme.php">Teach Meow</a></td>
+                    <td><a href="meowedit.php">Edit Meow</a></td>
+                    <td><a href="meowdelete.php">Delete Meow</a></td>
+                    <td><a href="close.php">Close Account</a></td>
+                    
+                  </tr>
+                </table>
+            </p>
+            <br>
                     <p>Copyright &copy; Yiming ZHANG ITMD 562 FP 15 Fall</p>
                 </div>
             </div>
