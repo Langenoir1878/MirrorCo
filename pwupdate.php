@@ -23,12 +23,46 @@ $userRepo = new \yzhan214\fp\SqliteUserRepository();
 $user = $userRepo->getUserByUname($_SESSION['user']);
 
 //shorten var name
-$p_username = $user->getUsername();
-$p_email = $user->getEmail();
-$p_address = $user->getAddress();
-$p_zip = $user->getZip();
+$stored_password = $user->getPassword();
 
 
+//error detecting fields
+$tempOP=isset($_POST['oldPW']);
+$tempP1=isset($_POST['pw1']);
+$tempP2=isset($_POST['pw2']);
+
+//form validation
+$formIsValid = true;
+$oldErr = '';
+$pw1Err = '';
+$pw2Err = '';
+
+//old password match validation
+if($tempOP!=$stored_password){
+     $formIsValid = false;
+    $oldErr = 'Wrong password!';
+}
+//set fields validation
+if(empty($tempOP)){
+    $formIsValid = false;
+    $oldErr = ' Please verify the old password';
+}
+
+if (empty($tempP1)){
+    $formIsValid = false;
+    $pw1Err = ' New password cannot be blank';
+}
+
+if (empty($tempP2)){
+    $formIsValid = false;
+    $pw2Err = ' Inputs not match';
+}
+//comparison validation
+if ($tempP1 != $tempP2){
+    $formIsValid = false;
+    $pw1Err = ' Inputs not match'
+    $pw2Err = ' Inputs not match';
+}
 
 ?>
 
@@ -125,6 +159,68 @@ $p_zip = $user->getZip();
            
         </div>
 
+    <!--PHP session-->
+
+    <?php if($_SERVER['REQUEST_METHOD'] =='POST'): ?>
+
+       <?php if($formIsValid): ?>
+
+            <?php  //begin database
+
+            $user->setPassword($tempP2);
+           
+            //save updated password
+            $userRepo->saveUser($user);
+
+            //start html page content to display successful message
+            ?>
+
+             <div style="text-align: center">
+                <br>
+                <p><b>Password updated!</b></p>
+                <br>
+            </div>
+
+            <?php 
+            //return error message WITHOUT pre-filled password for security
+            else: ?>
+
+            <form action="#" method="POST">
+
+                <p>
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;Old Password </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="oldPW">
+                    <font color = "red"><?php print $oldErr; ?></font>
+                </p>
+                   
+                <p>
+                    <b> &nbsp;&nbsp;&nbsp;&nbsp;New Password </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type = "password" name="pw1">
+                    <font color = "red"><?php print $pw1Err; ?></font>
+                </p>
+                <p>
+                    <b> &nbsp;&nbsp;&nbsp;&nbsp;Confirm Password </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type = "password" name="pw2">
+                    <font color = "red"><?php print $pw2Err; ?></font>
+                </p>
+
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Change Password" align="center">
+                <br>
+
+            </form>
+
+
+
+
+        <?php endif; ?>
+        <?php else: ?>
+
+
+
+
+
+
 
             <form action="#" method="POST">
 
@@ -144,13 +240,6 @@ $p_zip = $user->getZip();
                     &nbsp;&nbsp;&nbsp;&nbsp;<input type = "password" name="pw2">
                 </p>
 
-   
-                <?php 
-                //validation
-
-
-                ?>
-
                 <br><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Change Password" align="center">
                 <br>
@@ -158,7 +247,10 @@ $p_zip = $user->getZip();
             </form>
 
 
+        <?php endif; ?>
 
+
+        
 
         <hr>
 
