@@ -23,13 +23,13 @@ $userRepo = new \yzhan214\fp\SqliteUserRepository();
 $user = $userRepo->getUserByUname($_SESSION['user']);
 
 //shorten var name
-$stored_password = $user->getPassword();
-
+$valid_hash = $user->getPassword();
+$valid_pass = password_verify($tempOP, $valid_hash);
 
 //error detecting fields
-$tempOP=isset($_POST['oldPW']);
-$tempP1=isset($_POST['pw1']);
-$tempP2=isset($_POST['pw2']);
+$tempOP=isset($_POST['oldPW'])? $_POST['oldPW']: '';
+$tempP1=isset($_POST['pw1']) ? $_POST['pw1']: '';
+$tempP2=isset($_POST['pw2']) ? $_POST['pw2']: '';
 
 //form validation
 $formIsValid = true;
@@ -38,8 +38,8 @@ $pw1Err = '';
 $pw2Err = '';
 
 //old password match validation
-if($tempOP!=$stored_password){
-     $formIsValid = false;
+if(!$valid_pass){
+    $formIsValid = false;
     $oldErr = 'Wrong password!';
 }
 //set fields validation
@@ -60,7 +60,7 @@ if (empty($tempP2)){
 //comparison validation
 if ($tempP1 != $tempP2){
     $formIsValid = false;
-    $pw1Err = ' Inputs not match'
+    $pw1Err = ' Inputs not match';
     $pw2Err = ' Inputs not match';
 }
 
@@ -250,7 +250,7 @@ if ($tempP1 != $tempP2){
         <?php endif; ?>
 
 
-        
+
 
         <hr>
 
