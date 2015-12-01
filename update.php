@@ -33,17 +33,7 @@ $userEmail = isset($_POST['email']) ? $_POST['email']:'';
 $userAddress = isset($_POST['address']) ? $_POST['address']:'';
 $userZip = isset($_POST['zip']) ? $_POST['zip']:'';
 
-//form validation
-$formIsValid = true;
-$usernameErr = '';
-$passwordErr = '';
-
-if(empty($userUsername)){
-    $formIsValid = false;
-    $usernameErr = ' Username cannot be blank!';
-}
-
-
+//deleted validation since spare fields are optional
 
 ?>
 <!DOCTYPE html>
@@ -65,12 +55,6 @@ if(empty($userUsername)){
     <!-- Custom CSS -->
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -123,10 +107,6 @@ if(empty($userUsername)){
         <!-- /.container -->
     </nav>
 
-     <!--DB connection-->
-    <?php 
-     
-    ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -138,6 +118,11 @@ if(empty($userUsername)){
             </div>
            
     </div>
+    <?php 
+    //if-else
+
+    
+    ?>
 
   <form action="#" method = "post">        
     <br>
