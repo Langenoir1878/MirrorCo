@@ -1,3 +1,2 @@
 # MirroCo
-
-Please stop copying other's codes. Do your own work.
+09:16 AM M NOV 30 2015 Project Re-started.
