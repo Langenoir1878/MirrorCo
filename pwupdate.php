@@ -1,3 +1,36 @@
+<?php 
+/*
+ * Yiming ZHANG ITMD 562-01 FP
+ * NOV 30 M 2015 20:06:18 PM
+ * @ PS 3001 718 
+ * CYBER MONDAY
+ */
+
+namespace yzhan214\fp;
+
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit;
+}
+
+//open users table
+require_once 'User.php';
+require_once 'SqliteUserRepository.php';
+
+$userRepo = new \yzhan214\fp\SqliteUserRepository();
+$user = $userRepo->getUserByUname($_SESSION['user']);
+
+//shorten var name
+$p_username = $user->getUsername();
+$p_email = $user->getEmail();
+$p_address = $user->getAddress();
+$p_zip = $user->getZip();
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,23 +79,27 @@
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="about.php">About</a>
-                    </li>
-
-                    <li>
                         <a href="index.php">Index</a>
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="controller.php">Controller</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="profile.php">Profile</a>
                     </li>
 
                     <li>
-                        <a href="contact.php">Contact</a>
+                        <a>Change Password</a>
+                    </li>
+
+                    <li>
+                        <a href="update.php">Update Info</a>
+                    </li>
+
+                    <li>
+                        <a href="close.php">Close Account</a>
                     </li>
 
                 </ul>
@@ -73,9 +110,9 @@
     </nav>
 
      <!--DB connection-->
-	<?php 
-	 
-	?>
+    <?php 
+     
+    ?>
 
     <!-- Page Content -->
     <div class="container">
@@ -86,11 +123,41 @@
                <h1 class="page-header"> Password Update</h1>
             </div>
            
-    </div>
+        </div>
+
+
+            <form action="#" method="POST">
+
+    
+
+                <p>
+                    <b>&nbsp;&nbsp;&nbsp;&nbsp;Old Password </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="oldPW">
+                </p>
+                   
+                <p>
+                    <b> &nbsp;&nbsp;&nbsp;&nbsp;New Password </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type = "password" name="pw1">
+                </p>
+                <p>
+                    <b> &nbsp;&nbsp;&nbsp;&nbsp;Confirm Password </b><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type = "password" name="pw2">
+                </p>
 
    
+                <?php 
+                //validation
 
-    <a href="#"></a>
+
+                ?>
+
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Change Password" align="center">
+                <br>
+
+            </form>
+
+
 
 
         <hr>
@@ -103,10 +170,10 @@
                 </div>
             </div>
         </footer>
-
+    
     </div>
     <!-- /.container -->
-
+    
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
