@@ -22,14 +22,18 @@ require_once 'SqliteUserRepository.php';
 $userRepo = new \yzhan214\fp\SqliteUserRepository();
 $user = $userRepo->getUserByUname($_SESSION['user']);
 
-//shorten var name
-$valid_hash = $user->getPassword();
-$valid_pass = password_verify($tempOP, $valid_hash);
 
 //error detecting fields
 $tempOP=isset($_POST['oldPW'])? $_POST['oldPW']: '';
 $tempP1=isset($_POST['pw1']) ? $_POST['pw1']: '';
 $tempP2=isset($_POST['pw2']) ? $_POST['pw2']: '';
+
+//shorten var name
+$valid_hash = $user->getPassword();
+$valid_pass = password_verify($tempOP, $valid_hash);
+
+//hashing new password
+$hashed_new = password_hash($tempP2, PASSWORD_DEFAULT);
 
 //form validation
 $formIsValid = true;
@@ -144,9 +148,9 @@ if ($tempP1 != $tempP2){
     </nav>
 
      <!--DB connection-->
-    <?php 
-     
-    ?>
+	<?php 
+	 
+	?>
 
     <!-- Page Content -->
     <div class="container">
@@ -167,7 +171,7 @@ if ($tempP1 != $tempP2){
 
             <?php  //begin database
 
-            $user->setPassword($tempP2);
+            $user->setPassword($hashed_new);
            
             //save updated password
             $userRepo->saveUser($user);
