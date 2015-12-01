@@ -22,6 +22,12 @@ require_once 'SqliteUserRepository.php';
 $userRepo = new \yzhan214\fp\SqliteUserRepository();
 $user = $userRepo->getUserByUname($_SESSION['user']);
 
+//saved data
+$myName = $user->getUsername();
+$myEmail = $user->getEmail();
+$myAddress = $user->getAddress();
+$myZip = $user->getZip();
+
 //changable variables: EXCEPT username
 $userEmail = isset($_POST['email']) ? $_POST['email']:'';
 $userAddress = isset($_POST['address']) ? $_POST['address']:'';
@@ -87,23 +93,27 @@ if(empty($userUsername)){
                 <ul class="nav navbar-nav">
 
                     <li>
-                        <a href="about.php">About</a>
-                    </li>
-
-                    <li>
                         <a href="index.php">Index</a>
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="controller.php">Controller</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="profile.php">Profile</a>
                     </li>
 
                     <li>
-                        <a href="contact.php">Contact</a>
+                        <a href="pwupdate.php">Change Password</a>
+                    </li>
+
+                    <li>
+                        <a>Update Info</a>
+                    </li>
+
+                    <li>
+                        <a href="close.php">Close Account</a>
                     </li>
 
                 </ul>
@@ -129,7 +139,16 @@ if(empty($userUsername)){
            
     </div>
 
-  
+  <form action="#" method = "post">        
+    <br>
+    <p><b>&nbsp;&nbsp; Username &nbsp;</b> <?php print $myName; ?><p> <br>
+    <p><b>&nbsp;&nbsp;  Email </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name="email" size = "35" ></p>
+    <p><b>&nbsp;&nbsp;  Address </b> &nbsp;&nbsp;&nbsp;<input type = "text" name="address" size = "35" ></p>
+    <p><b>&nbsp;&nbsp;  Zip Code </b> &nbsp;&nbsp;<input type = "text" name="zip" ></p>
+    <br><br>
+    <p>&nbsp;&nbsp; <input type="submit" value = "Update"></p>
+    <br>
+    </form>
 
 
         <hr>
