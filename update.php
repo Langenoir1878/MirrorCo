@@ -1,4 +1,45 @@
+<?php 
+/*
+ * Yiming ZHANG ITMD 562-01 FP
+ * NOV 30 M 2015 23:32:02 PM
+ * @3001-718
+ * CYBER MONDAY
+ */
 
+namespace yzhan214\fp;
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit;
+}
+
+//open database to search for tuples
+require_once 'User.php';
+require_once 'SqliteUserRepository.php';
+
+//open users db
+$userRepo = new \yzhan214\fp\SqliteUserRepository();
+$user = $userRepo->getUserByUname($_SESSION['user']);
+
+//changable variables: EXCEPT username
+$userEmail = isset($_POST['email']) ? $_POST['email']:'';
+$userAddress = isset($_POST['address']) ? $_POST['address']:'';
+$userZip = isset($_POST['zip']) ? $_POST['zip']:'';
+
+//form validation
+$formIsValid = true;
+$usernameErr = '';
+$passwordErr = '';
+
+if(empty($userUsername)){
+    $formIsValid = false;
+    $usernameErr = ' Username cannot be blank!';
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,9 +114,9 @@
     </nav>
 
      <!--DB connection-->
-	<?php 
-	 
-	?>
+    <?php 
+     
+    ?>
 
     <!-- Page Content -->
     <div class="container">
