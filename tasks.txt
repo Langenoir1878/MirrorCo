@@ -1,0 +1,9 @@
+
+21:04:32 PM T DEC 1ST 2015 PS 3001 718
+
+Tasks:
+1 controller page, add delete button, sign in button
+2 close account page: navigation bar
+3 Update tab current no func
+4 Close tab current no func
+5 Add db connection on controller to scan records
