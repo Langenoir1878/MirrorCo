@@ -24,8 +24,6 @@ $user = $userRepo->getUserByUname($_SESSION['user']);
 
 //saved data
 $myName = $user->getUsername();
-$myEmail = $user->getEmail();
-
 ?>
 
 <!DOCTYPE html>
@@ -114,11 +112,6 @@ $myEmail = $user->getEmail();
         <!-- /.container -->
     </nav>
 
-     <!--DB connection-->
-	<?php 
-	 
-	?>
-
     <!-- Page Content -->
     <div class="container">
 
@@ -130,11 +123,40 @@ $myEmail = $user->getEmail();
            
     </div>
 
-       <p>Are you sure... info</p>
-   
+
+       <!-- PHP DB CONNECTION-->
+    <?php if($_SERVER['REQUEST_METHOD']=='POST'): ?>
+    <?php $userRepo->deleteUser($myName); ?>
+
+    <div align="center">
+    <img src = "images/eat.gif" height = "200" width = "200">
+    <h2>Thank you for using MirrorCo</h2>
+
+    <br><br>
+
+    </div>
+    <?php 
+    session_destroy();
+    ?>
+
+    <?php else: ?>
+
+    <div align="center">
+    
+    <img src = "images/balloon.gif" height = "300" width = "300">
+    
+    <p>Please confirm your request to close your account</p>
+
+    <form method = "post">
+        <input type = "submit" value = "Confirm">
+    </form>
+    <br>
+    <font color = "brown"><a href = "profile.php"> CLICK HERE TO CANCLE </a></font>
+    <br>
+    </div>
 
 
-    <a href="#"></a>
+<?php endif; ?>
 
 
         <hr>

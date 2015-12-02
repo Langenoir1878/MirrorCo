@@ -27,23 +27,6 @@ $userRepo = new \yzhan214\fp\SqliteUserRepository();
 $tempUn = isset($_POST['username']) ? trim($_POST['username']) : '';
 $tempPw = isset($_POST['password']) ? $_POST['password']:'';
 
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['username'])) {
-    $user = $userRepo->getUserByUname($tempUn);
-    $valid_user = $user->getUsername();
-    $valid_hash = $user->getPassword();
-    $valid_pass = password_verify($tempPw, $valid_hash);
-
-    if ($tempUn==$valid_user && $valid_pass){
-        $_SESSION['user'] = $valid_user;
-        header("Location: controller.php");
-        exit;
-    } else {
-        print "Login failed!";
-    }
-}
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,10 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['username'])) {
         <!-- /.container -->
     </nav>
 
-     <!--DB connection-->
-	<?php 
-	 
-	?>
 
     <!-- Page Content -->
     <div class="container">
@@ -162,7 +141,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['username'])) {
         </form>
         <br><br>
       
+      <div align="center"><font color="red">
+    <!--DB connection-->
+    <?php 
 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['username'])) {
+    $user = $userRepo->getUserByUname($tempUn);
+    $valid_user = $user->getUsername();
+    $valid_hash = $user->getPassword();
+    $valid_pass = password_verify($tempPw, $valid_hash);
+
+    if ($tempUn==$valid_user && $valid_pass){
+        $_SESSION['user'] = $valid_user;
+        header("Location: controller.php");
+        exit;
+    } else {
+        //$alertMsg= "Login failed!";
+    ?>
+    <script type = "text/javascript">
+     
+    alert("Login Failed");
+
+    </script>
+
+
+    <?php
+        }
+    }
+     
+    ?>
+    </font></div>
 
         <hr>
 

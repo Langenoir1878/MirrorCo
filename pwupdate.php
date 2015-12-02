@@ -191,9 +191,11 @@ if ($tempP1 != $tempP2){
             ?>
 
              <div style="text-align: center">
-                <br>
-                <p><b>Password updated!</b></p>
-                <br>
+                <br><br><br><br>
+                <font color= "#a86724">
+                <h1><b>Password Updated!</h1></p>
+                <br><br><br><br><br>
+            </font>
             </div>
 
             <?php 
