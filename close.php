@@ -1,3 +1,32 @@
+<?php 
+/*
+ * Yiming ZHANG ITMD 562-01 FP
+ * 14:45:00 PM W DEC 2ND 2015
+ * @3001-718
+ *
+ */
+
+namespace yzhan214\fp;
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit;
+}
+
+//open database to search for tuples
+require_once 'User.php';
+require_once 'SqliteUserRepository.php';
+
+//open users db
+$userRepo = new \yzhan214\fp\SqliteUserRepository();
+$user = $userRepo->getUserByUname($_SESSION['user']);
+
+//saved data
+$myName = $user->getUsername();
+$myEmail = $user->getEmail();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,16 +83,29 @@
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="controller.php">Controller</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="profile.php">Profile</a>
                     </li>
 
                     <li>
+                        <a href="pwupdate.php">Change Password</a>
+                    </li>
+                    
+                    <li>
+                        <a >Close Account</a>
+                    </li>
+                    
+                    <li>
+                        <a>Update Info</a>
+                    </li>
+
+                  <li>
                         <a href="contact.php">Contact</a>
                     </li>
+
 
                 </ul>
             </div>

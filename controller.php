@@ -76,14 +76,6 @@ if(!isset($_SESSION['user'])){
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
-                    </li>
-
-                    <li>
-                        <a>Sign In</a>
-                    </li>
-
-                    <li>
                         <a href="contact.php">Contact</a>
                     </li>
 

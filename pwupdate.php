@@ -72,7 +72,13 @@ if ($tempP1 != $tempP2){
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
 
+.image-right{
+    
+    margin-right: 100px;
+}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -163,6 +169,11 @@ if ($tempP1 != $tempP2){
            
         </div>
 
+            <div class="image-right">
+                <img src="images/waffle.gif" height="200" width = "222" align="right">
+            </div>
+
+
     <!--PHP session-->
 
     <?php if($_SERVER['REQUEST_METHOD'] =='POST'): ?>
@@ -232,7 +243,7 @@ if ($tempP1 != $tempP2){
 
                 <p>
                     <b>&nbsp;&nbsp;&nbsp;&nbsp;Old Password </b><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="oldPW">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="oldPW" >
                 </p>
                    
                 <p>

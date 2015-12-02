@@ -38,7 +38,13 @@ $userZip = isset($_POST['zip']) ? $_POST['zip']:'';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<style>
 
+.image-right{
+    
+    margin-right: 100px;
+}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -114,27 +120,51 @@ $userZip = isset($_POST['zip']) ? $_POST['zip']:'';
         <div class="row">
 
             <div class="col-lg-12">
-               <h1 class="page-header"> Update</h1>
+               <h1 class="page-header"> Update Profile</h1>
             </div>
            
-    </div>
-    <?php 
-    //if-else
-
+           <div class="image-right">
+                <img src="images/waffle.gif" height="200" width = "222" align="right">
+            </div>
     
-    ?>
+    <!-- PHP IF-ELSE BLOCKS -->
+     <?php if($_SERVER['REQUEST_METHOD'] =='POST'): ?>
+
+      <?php  //begin database
+
+            $user->setEmail($userEmail);
+            $user->setAddress($userAddress);
+            $user->setZip($userZip);
+
+           
+            //save updated password
+            $userRepo->saveUser($user);
+
+            //start html page content to display successful message
+            ?>
+
+             <div style="text-align: center">
+                <br>
+                <h3><b>Profile updated!</b></h3>
+                <br>
+            </div>
+
+    <?php else: ?>
 
   <form action="#" method = "post">        
     <br>
     <p><b>&nbsp;&nbsp; Username &nbsp;</b> <?php print $myName; ?><p> <br>
-    <p><b>&nbsp;&nbsp;  Email </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name="email" size = "35" ></p>
-    <p><b>&nbsp;&nbsp;  Address </b> &nbsp;&nbsp;&nbsp;<input type = "text" name="address" size = "35" ></p>
-    <p><b>&nbsp;&nbsp;  Zip Code </b> &nbsp;&nbsp;<input type = "text" name="zip" ></p>
+    <p><b>&nbsp;&nbsp;  Email </b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "text" name="email" size = "35" value="<?php print $myEmail; ?>"></p>
+    <p><b>&nbsp;&nbsp;  Address </b> &nbsp;&nbsp;&nbsp;<input type = "text" name="address" size = "35" value="<?php print $myAddress; ?>"></p>
+    <p><b>&nbsp;&nbsp;  Zip Code </b> &nbsp;&nbsp;<input type = "text" name="zip" value="<?php print $myZip; ?>"></p>
     <br><br>
     <p>&nbsp;&nbsp; <input type="submit" value = "Update"></p>
     <br>
     </form>
+    
+    <?php endif; ?>
 
+</div>
 
         <hr>
 
