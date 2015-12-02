@@ -46,12 +46,7 @@ $max=count($noteList);
 	
 	//display the list of notes
 	foreach($noteList as $note){
-	//	$a=rand(1,$max);
-	//	$tempnote= $noteList->getNoteById($a);
-	//print $tempnote;
-		//$tempNote = $noteList->getNoteById($a);
-		//print "The corresponding note: ".$tempNote->getSubject_line();
-		//rand(1,$max);
+	
 		print '<li><a href="view.php?id=' . $note->getId(). '">' . $note->getSubject_line() .  
 		'<font color= "#00FFFF"> &nbsp; -By: &nbsp;' . $note->getAuthor_name() . '</font><font color="grey"> &nbsp; ' 
 		. " &nbsp; ( Date created: " . $note->getCreate_date() . " &nbsp; Last modified: " . $note->getModified_date() 
