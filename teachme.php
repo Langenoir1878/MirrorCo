@@ -1,3 +1,33 @@
+<?php
+/**
+ * User: ln1878
+ * Date: 12/02/2015
+ * Time: 20:20:20 pm
+ * @ PS 3001-718 
+ * Chicago
+ */
+
+namespace yzhan214\fp;
+
+//check the session if logged in
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit;
+}
+
+require_once 'Record.php';
+require_once 'MeowRepo.php';
+
+$recRepo = new \yzhan214\fp\MeowRepo();
+$aRecord = new \yzhan214\fp\Record();
+
+//input memo filed
+$input = isset($_POST['memo']) ? $_POST['memo']:'';
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,10 +102,6 @@
         <!-- /.container -->
     </nav>
 
-     <!--DB connection-->
-	<?php 
-	 
-	?>
 
     <!-- Page Content -->
     <div class="container">
@@ -85,18 +111,35 @@
             <div class="col-lg-12">
                <h1 class="page-header"> Teach Me</h1>
             </div>
-           
-    </div>
+    
+    <?php if($_SERVER['REQUEST_METHOD'] =='POST'): ?>  
+    
+    <?php 
+    //save input memo
+    $aRecord->setRec($input);
+    $recRepo->saveRecord($aRecord);
 
-    <h3>What are we learning today?</h3>
-   
-   <textarea rows="4" cols="50"></textarea>
-   <br><br>
-   <input type="submit" name ="memo" value="Save">
+    ?>
 
-    <a href=""></a>
+    <div style="text-align: center">
+    <br>
+    <p><b> OK ~ Meow Has Remembered! </b></p>
+    <br><br>
+    <p><font color = "#bf8040"><a href = "controller.php"><u>Return to My Controller</u></a></font><p>
+    <br><br>
 
+    <?php else: ?>
 
+        <form action = "#" method="post">
+            <h3>What are we learning today?</h3>
+                <textarea rows="4" cols="50" name = "memo"></textarea>
+                    <br><br>
+                <input type="submit" value="Save">
+            <br>
+        </form>
+    <?php endif;?>
+
+</div>
         <hr>
 
         <!-- Footer -->

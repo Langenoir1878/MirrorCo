@@ -12,14 +12,14 @@ namespace yzhan214\fp;
 class Record{
 
     //initiate private vars
-	private $sentence = "";
+	private $rec = "";
 	private $id = "";
 	
     /* 
      * @constructor
      */
-	public function _construct($cSt,$cId){
-		$this->sentence = $cSt;
+	public function _construct($cRc,$cId){
+		$this->rec = $cRc;
         $this->id = $cId;
         
 	}//end of _construct()
@@ -30,8 +30,8 @@ class Record{
      * @accessors to return string
      */
 
-    public function getSentence(){
-    	return $this->sentence;
+    public function getRec(){
+    	return $this->rec;
     }
    
     public function getId(){ 
@@ -44,8 +44,8 @@ class Record{
      */
 
 
-    public function setSentence($st){
-    	$this->sentence= $st;
+    public function setRec($re){
+    	$this->rec= $re;
     }
    
     public function setId($id)

@@ -81,7 +81,7 @@ class SqliteUserRepository implements IUserRepository
             $aUser->setAddress($row['ADDRESS']);
             $aUser->setZip($row['ZIP']);
            
-            $notelist[$aUser->getId()] = $aUser;
+            $userlist[$aUser->getId()] = $aUser;
         }
         return $userlist;
     }
