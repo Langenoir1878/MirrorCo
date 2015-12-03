@@ -17,6 +17,17 @@ if(!isset($_SESSION['user'])){
 
 //open record table to retrieve random words
 
+
+
+
+
+
+
+
+
+
+
+
 ?>
 
 
@@ -28,7 +39,10 @@ if(!isset($_SESSION['user'])){
     
     margin-right: 100px;
 }
-<style>
+.text-pos{
+    margin-left: 200px;
+}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -104,7 +118,7 @@ if(!isset($_SESSION['user'])){
         </div>
      <!--DB connection-->
     
-    
+	
 
     <!-- Page Content -->
     <div class="container">
@@ -118,21 +132,40 @@ if(!isset($_SESSION['user'])){
 
         <!-- Sub func buttons -->
 
-    <div style="text-align:right;">
-        <a href="teachme.php" class="btn btn-primary btn-lg active" role="button">
-        <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Teach Meow </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="meowedit.php" class="btn btn-primary btn-lg active" role="button">
-        <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Edit Meow </a>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="text-align:right;">
 
-        <a href="meowdelete.php" class="btn btn-primary btn-lg active" role="button">
-        <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Delete Meow </a>
-    </div>
+            <a href="teachme.php" class="btn btn-primary btn active" role="button">
+            <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Teach Meow </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="meowedit.php" class="btn btn-primary btn active" role="button">
+            <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Edit Meow </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="meowdelete.php" class="btn btn-primary btn active" role="button">
+            <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Delete Meow </a>
+        </div>
+
+        <!-- Playground Begins-->
+        <div class = "image-pos">
+            <br><br><br>
+            <img src="images/hug.png"  align="right">
+            <br>
+        </div>
+
+            <!-- Changable form stuctures-->
+
+            <h3><font color = "#bf8040">
+            <div class="text-pos">
+                <?php 
+                //DB connection begins here
+                $temp="MeowMeowMeowMeo wMeowMe ow MeowMeow MeowMe o w MeowMeowM e o wMeowMe owMeow";
+
+                print wordwrap($temp,25,"<br>\n");
 
 
-
-
+                ?>
+            </div>
+            </font></h3>
 
 
 
@@ -145,19 +178,15 @@ if(!isset($_SESSION['user'])){
 
 
 
+
+
+
+
+
     </div>
     <!--CONTAINER END ABOVE-->
 
-    <h3></h3>
-    
-    <br>
-    
-    <p></p>
-    <p></p>
-    <p></p>
-
-
-    <a href="#"></a>
+   <br><br><br>
 
 
         <hr>
