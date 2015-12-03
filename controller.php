@@ -155,7 +155,21 @@ $max=count($list);
             <a href="meowedit.php?id=<?php echo $myID; ?>"  role="button">Edit Meow
             <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="meowdelete.php?id=<?php echo $myID; ?>"  role="button">Delete Meow
+            <!--Delete button without $_GET[] param-->
+            <!--script type = "text/javascript">
+            function del_navi(){
+                //confirm-> then submit form to meowdelete.php
+                if (confirm('Delete this message?')){
+                  form.submit();
+                }else{
+                   alert('Please help Meow review and improve!');
+                }
+
+            }
+            </script-->
+            <!--form action = "meowdelete.php" method = "POST" style = 'display: inline-block'-->
+            <a href="meowdelete.php?id=<?php echo $myID; ?>"  role="button" >Delete Meow
+                <!--input type = "hidden" name = "id" value = "<?php print $myID;?>"-->
             <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </form>
