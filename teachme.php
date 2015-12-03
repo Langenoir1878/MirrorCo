@@ -84,11 +84,11 @@ $input = isset($_POST['memo']) ? $_POST['memo']:'';
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="controller.php">Controller</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="profile.php">Profile</a>
                     </li>
 
                     <li>

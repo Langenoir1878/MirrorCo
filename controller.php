@@ -94,11 +94,15 @@ $max=count($list);
                     <li>
                         <a href="contact.php">Contact</a>
                     </li>
+                        
+                    <li>
+                        <a>Controller</a>
+                    </li>
 
                     <li>
                         <a href="profile.php">Profile</a>
                     </li>
-                        
+                    
                 </ul>
                    
             </div>
@@ -155,7 +159,8 @@ $max=count($list);
             <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </form>
-        <?php echo "Current ID is: ".$myID;?>
+        <?php //testing line: works great!
+        //echo "Current ID is: ".$myID;?>
         </div>
 
         <!-- Playground Begins-->

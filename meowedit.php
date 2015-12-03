@@ -25,6 +25,11 @@ $repo = new \yzhan214\fp\MeowRepo();
 $aId = isset($_GET['id'])?$_GET['id']:'';
 $aRec = $repo->getRecordById($aId);
 #print "Retrieved ID is: ".$aId;
+
+
+//input memo filed
+$input = isset($_POST['memo']) ? $_POST['memo']:'';
+
 ?>
 
 <!DOCTYPE html>
@@ -82,11 +87,11 @@ $aRec = $repo->getRecordById($aId);
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="controller.php">Controller</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="profile.php">Profile</a>
                     </li>
 
                     <li>
@@ -111,24 +116,51 @@ $aRec = $repo->getRecordById($aId);
                <h1 class="page-header">Edit</h1>
             </div>
            
+            <?php if($_SERVER['REQUEST_METHOD'] =='POST'): ?>  
+    
+            <?php 
+                //save input memo
+                $aRec->setRec($input);
+                $repo->saveRecord($aRec);
 
-
-            <font color = "#bf8040"><h3>
-                <br>
-            <!--DB connection-->
-                <?php 
-                    print $aRec->getRec();
                 ?>
-            </h3></font>
+
+                <div style="text-align: center">
+                <br>
+                <p><b>Thank you for helping Meow correct this!</b></p>
+                <p><?php print $aRec->getRec();?> </p>
+                <br><br>
+                <p><font color = "#bf8040"><a href = "controller.php"><u>Return to My Controller</u></a></font><p>
+                <br><br>
+
+            <!--font color = "#bf8040"><h3-->
+                <br>
+
+            <!--DB connection testing -->
+                <?php 
+                    //print $aRec->getRec();
+                ?>
+            <!--/h3></font-->
+
+            <?php else: ?>
+
+
+                <form action = "#" method="post">
+                    <h3>Help Meow Correct This</h3>
+                        <textarea rows="4" cols="50" name = "memo"><?php print $aRec->getRec();?></textarea>
+                            <br><br>
+                        <input type="submit" value="Save">
+                    <br>
+                </form>
+
+
+            <?php endif;?>
+
 
                 <br>
 
     </div>
-
-    
-
-
-   
+    <!--page content div end above-->
 
 
         <hr>
