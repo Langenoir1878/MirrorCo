@@ -23,7 +23,7 @@ class MeowRepo implements IRecRepo{
         $this->db = new \PDO('sqlite:' . $this->dbfile);
 
         //create the table if not exists
-        $this->db->exec("CREATE TABLE IF NOT EXISTS Meows (UID INTEGER PRIMARY KEY AUTOINCREMENT, RECORD TEXT)");
+        $this->db->exec("CREATE TABLE IF NOT EXISTS Meows (UID INTEGER PRIMARY KEY NOT NULL, RECORD TEXT)");
     }
 
     public function saveRecord($meow){

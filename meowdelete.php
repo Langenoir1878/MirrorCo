@@ -32,7 +32,15 @@ $aRec = $repo->getRecordById($aId);
 
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+.image-pos{
+    
+    margin-right: 100px;
+}
+.text-pos{
+    margin-left: 200px;
+}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -49,14 +57,8 @@ $aRec = $repo->getRecordById($aId);
     <!-- Custom CSS -->
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
+
 
 <body>
     <!-- Navigation -->
@@ -85,11 +87,11 @@ $aRec = $repo->getRecordById($aId);
                     </li>
 
                     <li>
-                        <a href="register.php">Register</a>
+                        <a href="controller.php">Controller</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Sign In</a>
+                        <a href="profile.php">Profile</a>
                     </li>
 
                     <li>
@@ -102,12 +104,6 @@ $aRec = $repo->getRecordById($aId);
         </div>
         <!-- /.container -->
     </nav>
-
-     <!--DB connection-->
-	<?php 
-	 
-	?>
-
     <!-- Page Content -->
     <div class="container">
 
@@ -116,13 +112,65 @@ $aRec = $repo->getRecordById($aId);
             <div class="col-lg-12">
                <h1 class="page-header">Message Review</h1>
             </div>
-           
-    </div>
+        </div>   
 
+           <?php if($_SERVER['REQUEST_METHOD'] =='POST'): ?>  
     
+            <?php 
+                //deleteRecord($aId)
+                $repo->deleteRecord($aId);
 
-    <a href="#"></a>
+                ?>
 
+          <div style="text-align: center">
+                <br>
+                <font><p><b>Wait...What had just happened?</b></p></font>
+
+                
+                <br><br>
+                <p><font color = "#bf8040"><a href = "controller.php"><u>Nothing, LOL!!</u></a></font><p>
+                <br><br>
+
+            <!--font color = "#bf8040"><h3-->
+                <br>
+
+            <!--DB connection testing -->
+                <?php 
+                    //print $aRec->getRec();
+                ?>
+            <!--/h3></font-->
+
+    </div>
+    <!--page content div end above-->
+
+
+
+            <?php else: ?>
+
+
+            <div align="center">
+                <form action = "#" method="post">
+                    <p><b>Someone taught me this: </b></p>
+                        <p><?php print wordwrap($aRec->getRec(),33,"<br>\n");?></p>
+                            <br><b><font color = "#bf8040"><p>Do you want me to forget it?</p></font></b><br>
+                        <input type="submit" value="YES! Forget It!"> <br><br>
+                    <p><font color = "#bf8040"><a href = "controller.php"><u><b>Nope, I changed my mind!</b></u></a></font><p><br><br> 
+                </form>
+            </div>
+                <br>
+
+    </div>
+    <!--page content div end above-->
+           
+
+
+            <?php endif;?>
+
+
+                <br>
+
+
+   
 
         <hr>
 
@@ -135,9 +183,7 @@ $aRec = $repo->getRecordById($aId);
             </div>
         </footer>
 
-    </div>
-    <!-- /.container -->
-
+    
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
