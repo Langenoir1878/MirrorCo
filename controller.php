@@ -23,7 +23,11 @@ if(!isset($_SESSION['user'])){
 
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+.image-pos{
+    
+    margin-right: 100px;
+}
 <head>
 
     <meta charset="utf-8">
@@ -99,7 +103,7 @@ if(!isset($_SESSION['user'])){
         </div>
      <!--DB connection-->
     
-	
+    
 
     <!-- Page Content -->
     <div class="container">
@@ -109,8 +113,39 @@ if(!isset($_SESSION['user'])){
             <div class="col-lg-12">
                <h1 class="page-header"> Controller</h1>
             </div>
-           
+
+
+        <!-- Sub func buttons -->
+
+    <div style="text-align:right;">
+        <a href="teachme.php" class="btn btn-primary btn-lg active" role="button">
+        <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Teach Meow </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="meowedit.php" class="btn btn-primary btn-lg active" role="button">
+        <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Edit Meow </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <a href="meowdelete.php" class="btn btn-primary btn-lg active" role="button">
+        <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Delete Meow </a>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+    </div>
+    <!--CONTAINER END ABOVE-->
 
     <h3></h3>
     
