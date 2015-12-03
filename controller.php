@@ -15,18 +15,15 @@ if(!isset($_SESSION['user'])){
     exit;
 }
 
+require_once 'MeowRepo.php';
+require_once 'Record.php';
+
 //open record table to retrieve random words
+$repo = new \yzhan214\fp\MeowRepo();
+$list = $repo->getAllRecords();
 
-
-
-
-
-
-
-
-
-
-
+//count the mubner of object in list
+$max=count($list);
 
 ?>
 
@@ -117,7 +114,18 @@ if(!isset($_SESSION['user'])){
                             &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         </div>
      <!--DB connection-->
+    <?php 
     
+
+        $a=rand(1,$max);//get a random number within db ID range
+                                
+        $tempRec = $repo->getRecordById($a);
+                                
+        //for PHP GET
+        $myID = $tempRec->getId();
+        $myRec = $tempRec->getRec();
+
+    ?>
 	
 
     <!-- Page Content -->
@@ -133,16 +141,21 @@ if(!isset($_SESSION['user'])){
         <!-- Sub func buttons -->
 
         <div style="text-align:right;">
-
-            <a href="teachme.php" class="btn btn-primary btn active" role="button">
-            <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Teach Meow </a>
+            <form method="post">
+            <a href="controller.php"  role="button" >TALK
+            <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="teachme.php"  role="button">Teach Meow
+            <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="meowedit.php" class="btn btn-primary btn active" role="button">
-            <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Edit Meow </a>
+            <a href="meowedit.php?id=<?php echo $myID; ?>"  role="button">Edit Meow
+            <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <a href="meowdelete.php" class="btn btn-primary btn active" role="button">
-            <img src="images/orange-spot-hi.png" style="width:33px;height:33px;"> Delete Meow </a>
+            <a href="meowdelete.php?id=<?php echo $myID; ?>"  role="button">Delete Meow
+            <img src="images/deadfish.png" style="width:33px;height:33px;"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </form>
+        <?php echo "Current ID is: ".$myID;?>
         </div>
 
         <!-- Playground Begins-->
@@ -153,33 +166,27 @@ if(!isset($_SESSION['user'])){
         </div>
 
             <!-- Changable form stuctures-->
+            <form action="#" method = "post">
+                <h3><font color = "#bf8040">
+                    <div class="text-pos">
+                        <?php 
+                            //DB connection begins here, testing:
+                            #$temp="MeowMeowMeowMeo wMeowMe ow MeowMeow MeowMe o w MeowMeowM e o wMeowMe owMeow";
+                            #print wordwrap($temp,25,"<br>\n");
 
-            <h3><font color = "#bf8040">
-            <div class="text-pos">
-                <?php 
-                //DB connection begins here
-                $temp="MeowMeowMeowMeo wMeowMe ow MeowMeow MeowMe o w MeowMeowM e o wMeowMe owMeow";
+                                #$a=rand(1,$max);//get a random number within db ID range
+                                
+                                #$tempRec = $repo->getRecordById($a);
+                                #$myID = $tempRec->getId();
+                                #$myRec = $tempRec->getRec();
 
-                print wordwrap($temp,25,"<br>\n");
+                            #print $myID . $myRec;//this works great!
 
-
-                ?>
-            </div>
-            </font></h3>
-
-
-
-
-
-
-
-
-     
-
-
-
-
-
+                            print wordwrap($myRec,33,"<br>\n");
+                        ?>
+                    </div>
+                </font></h3>
+            </form>
 
 
 

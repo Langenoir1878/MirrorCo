@@ -1,3 +1,31 @@
+<?php 
+/**
+ * Yiming ZHANG ITMD 562-01 FP
+ * DEC 2 W 2015 22:17:59 PM
+ * @ PS 3001 718 
+ * 
+ */
+
+namespace yzhan214\fp;
+
+session_start();
+
+if(!isset($_SESSION['user'])){
+    header("Location: login.php");
+    exit;
+}
+
+require_once 'MeowRepo.php';
+require_once 'Record.php';
+
+//open record table to retrieve random words
+$repo = new \yzhan214\fp\MeowRepo();
+
+//return specific record through $_GET[]
+$aId = isset($_GET['id'])?$_GET['id']:'';
+$aRec = $repo->getRecordById($aId);
+#print "Retrieved ID is: ".$aId;
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -72,10 +100,7 @@
         <!-- /.container -->
     </nav>
 
-     <!--DB connection-->
-	<?php 
-	 
-	?>
+     
 
     <!-- Page Content -->
     <div class="container">
@@ -86,12 +111,24 @@
                <h1 class="page-header">Edit</h1>
             </div>
            
+
+
+            <font color = "#bf8040"><h3>
+                <br>
+            <!--DB connection-->
+                <?php 
+                    print $aRec->getRec();
+                ?>
+            </h3></font>
+
+                <br>
+
     </div>
 
     
 
 
-    <a href="#"></a>
+   
 
 
         <hr>
