@@ -28,6 +28,7 @@ if(!isset($_SESSION['user'])){
     
     margin-right: 100px;
 }
+<style>
 <head>
 
     <meta charset="utf-8">
