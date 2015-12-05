@@ -34,7 +34,13 @@ $input = isset($_POST['memo']) ? $_POST['memo']:'';
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+.element_right{
+    
+    margin-right: 200px;
+}
 
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -125,7 +131,13 @@ $input = isset($_POST['memo']) ? $_POST['memo']:'';
                 <p><?php print $aRec->getRec();?> </p>
                 <br><br>
                 <p><font color = "#bf8040"><a href = "controller.php"><u>Return to My Controller</u></a></font><p>
-                <br><br>
+                <br>
+                <h1 align="center"><font color = "grey">Making Miracles Happen</font></h1>
+                <br>
+                <base target="_blank">
+                <a href="http://nobullying.com/six-unforgettable-cyber-bullying-cases/"><u>Dark History: TOP 6 Unforgettable CyberBullying Cases Ever</u></a>
+
+                <br>
 
             <!--font color = "#bf8040"><h3-->
                 <br>
@@ -138,6 +150,9 @@ $input = isset($_POST['memo']) ? $_POST['memo']:'';
 
             <?php else: ?>
 
+                <div class="element_right" >
+                    <img src="images/travel.gif" height="222" width="233" align="right">
+                </div>
 
                 <form action = "#" method="post">
                     <h3>Help Meow Correct This</h3>

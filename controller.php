@@ -37,7 +37,7 @@ $max=count($list);
     margin-right: 100px;
 }
 .text-pos{
-    margin-left: 200px;
+    margin-left: 78px;
 }
 </style>
 <head>
@@ -201,7 +201,7 @@ $max=count($list);
 
                             #print $myID . $myRec;//this works great!
 
-                            print wordwrap($myRec,33,"<br>\n");
+                            print wordwrap($myRec,47,"<br>\n");
                         ?>
                     </div>
                 </font></h3>

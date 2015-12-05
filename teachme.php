@@ -31,7 +31,15 @@ $input = isset($_POST['memo']) ? $_POST['memo']:'';
 
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+.element_right{
+    
+    margin-right: 100px;
+}
+.element_left{
+    margin-left: 10px;
+}
+</style>
 <head>
 
     <meta charset="utf-8">
@@ -124,22 +132,45 @@ $input = isset($_POST['memo']) ? $_POST['memo']:'';
     <div style="text-align: center">
     <br>
     <p><b> OK ~ Meow Has Remembered! </b></p>
+    <p>For security issues, Meow will not publish your personal information to the public! </p>
+    <p>Hopefully, your words will reach the right person!</p>
     <br><br>
     <p><font color = "#bf8040"><a href = "controller.php"><u>Return to My Controller</u></a></font><p>
     <br><br>
+    </div>
+
 
     <?php else: ?>
+    <div class="element_right" >
+            <img src="images/lazy.gif" height="187" width="187" align="right">
+            <img src="images/pink.jpeg" height="77" width="77" align="right">
+           
+        </div>
 
-        <form action = "#" method="post">
+    <div class="element_left">
+        <form action = "#" method="post" align="left">
             <h3>What are we learning today?</h3>
                 <textarea rows="4" cols="50" name = "memo"></textarea>
                     <br><br>
                 <input type="submit" value="Save">
-            <br>
+            <br><br>
         </form>
+        </div>
+
+    <div class="element_right" ><b>
+            <p align="right">You may teach me any words, about fashion, food, your favourite TV shows</p>
+            <p align="right">Or even something you wish to tell someone you <font color="#bf8040">Love</font> or someone you <font color="#bf8040">Missed</font></p>
+            <p align="right">I will always be here listening to and echoing for you</p>
+            <br>
+        </b>
+    </div>
+        
+
+        
+
     <?php endif;?>
 
-</div>
+
         <hr>
 
         <!-- Footer -->
